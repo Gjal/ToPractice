@@ -1,5 +1,6 @@
 public class PascalTriangleII{
-    public List<Integer> getRow(int rowIndex){
+    //method one
+  /*  public List<Integer> getRow(int rowIndex){
         List<Integer> row=new ArrayList<Integer>();
         if(rowIndex==0){
             row.add(1);
@@ -22,6 +23,18 @@ public class PascalTriangleII{
             }
             row.add(1);
             row.remove(0);
+        }
+        return row;
+    }*/
+
+    //method two
+    public List<Integer> getRow(int rowIndex){
+        List<Integer> row=new ArrayList<Integer>();
+        for(int i=0;i<rowIndex+1;i++){
+            row.add(0,1);
+            for(int j=1;j<i;j++){
+                row.set(j,row.get(j)+row.get(j+1));
+            }
         }
         return row;
     }

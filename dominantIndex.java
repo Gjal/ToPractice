@@ -1,3 +1,4 @@
+//747.至少是其他数字两倍的最大数
 class Solution {
     public int dominantIndex(int[] nums) {
         int max=0;

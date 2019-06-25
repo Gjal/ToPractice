@@ -1,4 +1,4 @@
-
+//118.杨辉三角
 public class Pascal_Triangle{
     public List<List<Integer>> generate(int numRows) {
 		List<List<Integer>> triangle=new ArrayList<List<Integer>>();

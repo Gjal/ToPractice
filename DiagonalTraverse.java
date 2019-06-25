@@ -1,6 +1,4 @@
 //498.对角线遍历
-import java.util.ArrayList;
-
 public class DiagonalTraverse{
     public int[] findDiagonalOrder(int[][] matrix){
         int row=matrix.length;

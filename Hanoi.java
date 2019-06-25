@@ -1,3 +1,4 @@
+//汉诺塔
 public class Hanoi{
 public void Hannoi (int n, char a, char b, char c){
 if(n==1){

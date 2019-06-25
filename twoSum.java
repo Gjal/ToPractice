@@ -1,4 +1,5 @@
-class Solution {
+//1.两数之和
+class twoSum {
     public int[] twoSum(int[] nums, int target) {
         int targetNum[]=new int[2];
         for(int i=0;i<nums.length;i++){     

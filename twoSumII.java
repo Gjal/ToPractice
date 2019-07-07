@@ -1,4 +1,4 @@
-//167.两数之和
+//167.两数之和--输入有序数组
 public int[] twoSum(int[] numbers, int target) {
         int i=0;
         int j=numbers.length-1;

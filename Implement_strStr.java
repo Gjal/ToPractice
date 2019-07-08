@@ -24,3 +24,48 @@ public class Implement_strStr {
 	        }
 	    }
 }
+
+//方法二．kmp算法
+public int strStr(String haystack, String needle) {
+        int i=0;
+        int j=0;
+        char[] hays=haystack.toCharArray();
+        char[] need=needle.toCharArray();
+        int[] next=getNext(need);
+        while(i<hays.length&&j<need.length){
+            if(hays[i]==need[j]){
+                i++;
+                j++;
+            }else{
+                if(j==0)
+                    i++;
+                else
+                    j=next[j-1];
+            }
+        }
+        if(j==need.length)
+            return i-j;
+        else
+            return -1;
+        
+    }
+    public int[] getNext(char[] needle){
+        int i=1;
+        int j=0;
+        int[] next=new int[needle.length];
+        while(i<needle.length){
+            if(needle[i]==needle[j]){
+                next[i]=j+1;
+                i++;
+                j++;
+            }else{
+                if(j!=0)
+                    j=next[j-1];
+                else{
+                    next[i]=0;
+                    i++;
+                }
+            }
+        }
+        return next;
+    }

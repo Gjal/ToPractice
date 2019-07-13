@@ -15,3 +15,22 @@ public int minSubArrayLen(int s, int[] nums) {
        }
         return (len!=nums.length+1)?len:0;
     }
+//暴力破解
+public int minSubArrayLen(int s, int[] nums) {
+        if(nums.length==0||nums==null) return 0;
+        
+        int sum=0;
+        int res=nums.length+1;
+        for(int i=0;i<nums.length;i++){
+            sum=nums[i];
+            if(sum>=s) return 1;
+            for(int j=i+1;j<nums.length;j++){
+                sum+=nums[j];
+                if(sum>=s){
+                    res=res>(j-i+1)?(j-i+1):res;
+                    break;
+                } 
+            }
+        }
+        return (res!=nums.length+1)?res:0;
+    }

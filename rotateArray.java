@@ -24,3 +24,24 @@ public void rotate(int[] nums, int k) {
             nums[j]=b[j];
         }
     }
+//环状替换
+public void rotate(int[] nums, int k) {
+        k%=nums.length;
+        int prev=0;
+        int current=0;
+        int count=0;
+        int next=0;
+        int temp=0;
+        for(int start=0;count<nums.length;start++){
+            prev=nums[start];
+            current=start;
+            do{
+                next=(current+k)%nums.length;
+                temp=nums[next];
+                nums[next]=prev;
+                prev=temp;
+                current=next;
+                count++;
+            }while(current!=start);
+        }
+    }
